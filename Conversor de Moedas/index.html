@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <!-- Adicionar um arquivo css dentro do html --> 
+    <link rel="stylesheet" type = "text/css" href ="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 calss="page-title">
+            Conversor de moedas
+        </h1>
+        <p class="page-subtitle">
+            Descubra os valores em real R$
+        </p>
+        <!-- Adicinar o logo da página -->
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt=""><br><br>
+        <label for="moeda">Insira o valor em Dólar</label><br>
+
+        <!-- Elemento input para entrar com dados do tipo number -->
+        <input type="number" id="valor" size="2" /><br>
+
+        <!-- Elemento para insetir um botão para converter em Real-->
+        <button type="submit" onclick="ConverterReal()">Converter em Real</button>
+        <h2 id="valorConvertidoEmReal"></h2>
+        <!-- Elemento para insetir um botão para converter em Euro -->
+        <button type="submit" onclick="ConverterEuro()">Converter em Euro</button>
+        <h2 id="valorConvertidoEmEuro"></h2>
+    </div>
+    <a href="https://alura.com.br/" target="_blank">
+    <!-- imagem moedas -->
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+</body>
+<script>
+    function ConverterReal() {
+        //Buscar um elemento com o ID "valor" dentro do HTML
+        var valorElemento = document.getElementById("valor");
+        var valor = valorElemento.value;
+
+        //Transformando o número que está entrando no input no tipo float
+        var valorEmDolarNumerico = parseFloat(valor);
+
+        //Conversão do dólar para Real
+        var valorEmReal = valorEmDolarNumerico * 5;
+        console.log(valorEmReal);
+
+        //Buscar um elemento com o ID valorConvertido dentro do HTML
+        var elementoValorConvertido = document.getElementById("valorConvertidoEmReal");
+
+        //Inserir uma frase da conversão do dólar para real
+        var valorConvertidoEmReal = "O resultado em real é R$ " + valorEmReal;
+
+        //Inserir a frase da variáver "valorConvertido" dentro da página
+        elementoValorConvertido.innerHTML = valorConvertidoEmReal;
+    }
+
+    function ConverterEuro() {
+        //Buscar um elemento com o ID "valor" dentro do HTML
+        var valorElemento = document.getElementById("valor");
+        var valor = valorElemento.value;
+
+        //Transformando o número que está entrando no input no tipo float
+        var valorEmDolarNumerico = parseFloat(valor);
+
+        //Conversão do dólar para Real
+        var valorEmEuro = valorEmDolarNumerico * 1.01;
+        console.log(valorEmEuro);
+
+        //Buscar um elemento com o ID valorConvertido dentro do HTML
+        var elementoValorConvertido = document.getElementById("valorConvertidoEmEuro");
+
+        //Inserir uma frase da conversão do dólar para real
+        var valorConvertidoEmEuro = "O resultado em real é R$ " + valorEmEuro;
+
+        //Inserir a frase da variáver "valorConvertido" dentro da página
+        elementoValorConvertido.innerHTML = valorConvertidoEmEuro;
+    }
+</script>
+</html>
