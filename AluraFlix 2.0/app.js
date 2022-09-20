@@ -21,7 +21,6 @@ function listaFilmesNaTela (filme) {
     //Buscar informações do elemento ID "listaFilmes"
     //E adicionar dentro de "listasFilmes" o elementoFilmeFavorito
     var elementoListaFilmes = document.getElementById("listaFilmes");
-
     //Adicionar elementoFilmeFavorito dentro do elementoListaFilmes
     elementoListaFilmes.innerHTML = elementoListaFilmes.innerHTML + elementoFilmeFavorito;
 }
